@@ -1,0 +1,23 @@
+server:
+  port: 8700
+spring:
+  application:
+    name: mscloud-stream
+  cloud:
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+      host: localhost
+      port: 8500
+    stream:
+      default-binder: rabbit
+      bindings:
+        output:
+          destination: life-exchange
+          content-type: application/json
+          group: life-group
+  rabbitmq:
+    host: centos7-01
+    port: 5672
+    username: guest
+    password: guest

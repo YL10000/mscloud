@@ -19,6 +19,13 @@ spring:
         service-name: ${spring.application.name}
       host: localhost
       port: 8500
+    stream:
+      default-binder: rabbit
+      bindings:
+        input:
+          destination: life-exchange
+          content-type: application/json
+          group: life-group
     config:
       # 配置中心连接路径
       uri: http://localhost:8900

@@ -10,6 +10,7 @@
         <module>mscloud-hystrix-dashboard</module>
         <module>mscloud-gateway</module>
         <module>mscloud-config</module>
+        <module>mscloud-stream</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -117,6 +118,7 @@
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>swagger-bootstrap-ui</artifactId>
         </dependency>
+
     </dependencies>
 
 
