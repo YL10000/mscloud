@@ -3,9 +3,11 @@ package com.life.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.life.config.LifeConfig;
 import com.life.entity.Order;
 import com.life.service.OrderService;
 import com.life.vo.ResultVO;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -19,13 +21,17 @@ import java.util.List;
  * @since 2020-12-02 11:34:41
  */
 @RestController
-@RequestMapping("order")
+@RequestMapping("/payment/order")
+@RefreshScope
 public class OrderController{
     /**
      * 服务对象
      */
     @Resource
     private OrderService orderService;
+
+    @Resource
+    private LifeConfig lifeConfig;
 
     /**
      * 查询所有数据
@@ -40,7 +46,8 @@ public class OrderController{
 
     @GetMapping("hi")
     public ResultVO hi(String username){
-        return  ResultVO.ok(this.orderService.hi(username));
+        return  ResultVO.ok(lifeConfig);
+        //return  ResultVO.ok(this.orderService.hi(username));
     }
 
     @GetMapping("acc")

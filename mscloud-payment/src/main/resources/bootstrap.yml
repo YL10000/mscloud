@@ -19,6 +19,22 @@ spring:
         service-name: ${spring.application.name}
       host: localhost
       port: 8500
+    config:
+      # 配置中心连接路径
+      uri: http://localhost:8900
+      # git分支名称
+      label: master
+      # git配置文件名称
+      name: application
+  profiles:
+    # 激活那个配置
+    active: test
+  rabbitmq:
+    host: centos7-01
+    port: 5672
+    username: guest
+    password: guest
+
 
 mybatis-plus:
   configuration:
@@ -36,6 +52,8 @@ mybatis-plus:
 #    lease-renewal-interval-in-seconds: 1
 #    # 注册中心多长时间收不到心跳消息后进行注销该实例（默认90s）
 #    lease-expiration-duration-in-seconds: 3
+
+# 配置需要暴露的接口
 management:
   endpoints:
     web:

@@ -28,8 +28,8 @@ public class PaymentApp {
         HystrixMetricsStreamServlet hystrixMetricsStreamServlet = new HystrixMetricsStreamServlet();
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(hystrixMetricsStreamServlet);
         servletRegistrationBean.setLoadOnStartup(1);
-        servletRegistrationBean.addUrlMappings("/actuator/hystrix.stream");
-        servletRegistrationBean.setName("hystrixServlet");
+        servletRegistrationBean.addUrlMappings("/hystrix.stream");
+        servletRegistrationBean.setName("HystrixMetricsStreamServlet");
         return servletRegistrationBean;
     }
 }

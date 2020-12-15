@@ -1,0 +1,24 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: mscloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: mscloud-payment
+          #uri: http://localhost:8081
+          uri: lb://mscloud-payment
+          predicates:
+            - Path=/payment/**
+        - id: mscloud-order-consumer
+          #uri: http://localhost:80
+          uri: lb://mscloud-order-consumer
+          predicates:
+            - Path=/consumer/**
+    # consul注册中心
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+      host: localhost
+      port: 8500

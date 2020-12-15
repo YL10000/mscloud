@@ -3,3 +3,7 @@ server:
 spring:
   application:
     name: mscloud-hystrix-dashboard
+hystrix:
+  dashboard:
+    # 配置允许监控的程序列表
+    proxy-stream-allow-list: "*"

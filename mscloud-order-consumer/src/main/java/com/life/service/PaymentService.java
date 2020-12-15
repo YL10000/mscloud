@@ -22,12 +22,12 @@ import java.io.Serializable;
 @FeignClient(value = "mscloud-payment",fallback = PaymentServiceHandler.class)
 public interface PaymentService {
 
-    @GetMapping("order/{id}")
+    @GetMapping("payment/order/{id}")
     ResultVO order(@PathVariable Serializable id);
 
-    @GetMapping("order/hi")
+    @GetMapping("payment/order/hi")
     ResultVO hi(@RequestParam("username") String username);
 
-    @GetMapping("order/acc")
+    @GetMapping("payment/order/acc")
     ResultVO acc(@RequestParam("a") Integer a,@RequestParam("b") Integer b);
 }

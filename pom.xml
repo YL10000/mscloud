@@ -8,6 +8,8 @@
         <module>mscloud-common</module>
         <module>mscloud-rejistry-center-eureka</module>
         <module>mscloud-hystrix-dashboard</module>
+        <module>mscloud-gateway</module>
+        <module>mscloud-config</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
