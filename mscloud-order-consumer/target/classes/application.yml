@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: mscloud-order-consumer
+  # zipkin连接地址
+  zipkin:
+    base-url: http://centos7-01:9411
+  sleuth:
+    sampler:
+      # 采样比例
+      probability: 1
   cloud:
 #    zookeeper:
 #      # zookeeper注册中心的连接地址

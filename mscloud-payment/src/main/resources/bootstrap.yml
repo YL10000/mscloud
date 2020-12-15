@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: mscloud-payment
+  zipkin:
+    base-url: http://centos7-01:9411
+  sleuth:
+    sampler:
+      probability: 1
   datasource:
     username: root
     password: root
